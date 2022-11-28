@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -14,15 +17,13 @@ class SplashScreen : AppCompatActivity() {
 
         this@SplashScreen.installSplashScreen()
 
-       /* try {
+        try {
             runBlocking { // this: CoroutineScope
-                launch { doWorld() }
+                launch { doWork() }
             }
-        } catch (ex: InterruptedException) {
+        } catch (ex: java.lang.Exception) {
             ex.printStackTrace()
-        }*/
-
-//        this@SplashScreen.installSplashScreen()
+        }
 
         startActivity(Intent(this, MainActivity::class.java))
         finish()
@@ -30,9 +31,8 @@ class SplashScreen : AppCompatActivity() {
     }
 
     // this is your first suspending function
-    // this method add delay in Splash Screen
-    /*private suspend fun doWorld() {
+    private suspend fun doWork() {
         delay(1000L)
-    }*/
+    }
 
 }
