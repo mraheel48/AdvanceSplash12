@@ -10,14 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicAppSample">
         <activity
-            android:name=".SplashScreen"
-            android:exported="true"
-            android:theme="@style/Theme.BasicAppSample.Starting">
+            android:name=".NewSplashScreen"
+            android:theme="@style/Theme.AppCompat.Start"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false"
+            android:theme="@style/Theme.BasicAppSample.Starting">
         </activity>
         <activity
             android:name=".MainActivity"
